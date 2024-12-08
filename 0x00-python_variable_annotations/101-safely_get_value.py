@@ -11,12 +11,12 @@ T = TypeVar('T')
 
 
 def safely_get_value(
-    a: Mapping[Any, Any],
-    k: Any,
+    dct: Mapping[Any, Any],
+    key: Any,
     default: Optional[T] = None
 ) -> Union[Any, T]:
     """returns value of a mapping for a key or default if not found"""
-    if k in a:
-        return a[k]
+    if key in dct:
+        return dct[key]
     else:
         return default
