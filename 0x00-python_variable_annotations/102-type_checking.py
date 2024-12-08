@@ -5,14 +5,14 @@ Keyword arguments:
 argument -- description
 Return: return_description
 """
-from typing import Iterable, List, Union
+from typing import List, Tuple
 
 
-def zoom_array(a: Iterable[int], factor: Union[int, float] = 2) -> List[int]:
+def zoom_array(lst: Tuple, factor: int = 2) -> List:
     """returns a list of integers zoomed by a factor"""
-    zoomed_in: List[int] = [
-        item for item in a
-        for i in range(int(factor))
+    zoomed_in: List = [
+        item for item in lst
+        for i in range(factor)
     ]
     return zoomed_in
 
