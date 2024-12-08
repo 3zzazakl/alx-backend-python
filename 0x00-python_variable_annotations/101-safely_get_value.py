@@ -11,9 +11,9 @@ T = TypeVar('T')
 
 
 def safely_get_value(
-    dct: Mapping[Any, Any],
+    dct: Mapping,
     key: Any,
-    default: Optional[T] = None
+    default: Union[T, None] = None
 ) -> Union[Any, T]:
     """returns value of a mapping for a key or default if not found"""
     if key in dct:
