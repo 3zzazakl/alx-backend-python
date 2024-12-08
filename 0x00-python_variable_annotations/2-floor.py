@@ -8,6 +8,6 @@ Return: return_description
 import math
 
 
-def floor(a: float) -> float:
+def floor(n: float) -> float:
     """returns floor of a float"""
-    return math.floor(a)
+    return math.floor(n)
