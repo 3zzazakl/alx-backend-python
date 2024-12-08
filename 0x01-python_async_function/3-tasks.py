@@ -5,14 +5,14 @@ Keyword arguments:
 argument -- description
 Return: return_description
 """
-import asyncio
+from asyncio import Task, create_task
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-async def task_wait_random(max_delay: int) -> asyncio.Task:
-    """sumary_line
+def task_wait_random(max_delay: int) -> Task:
+    """summary_line
     Keyword arguments:
     argument -- description
     Return: return_description
     """
-    return asyncio.create_task(wait_random(max_delay))
+    return create_task(wait_random(max_delay))
