@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 """summary_line
 
 Keyword arguments:
