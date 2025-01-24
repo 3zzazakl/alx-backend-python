@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""sumary_line
+"""summary_line
 
 Keyword arguments:
 argument -- description
@@ -11,7 +11,7 @@ async_comprehension = __import__('1-async_comprehension').async_comprehension
 
 
 async def measure_runtime() -> float:
-    """sumary_line
+    """summary_line
 
     Keyword arguments:
     argument -- description
@@ -23,6 +23,6 @@ async def measure_runtime() -> float:
         async_comprehension(),
         async_comprehension(),
         async_comprehension()
-        )
+    )
     end_time = time.time()
     return end_time - start
