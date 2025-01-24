@@ -10,8 +10,8 @@ import random
 from typing import Generator
 
 
-async def async_generator() -> Generator[float, None, None]:
-    """sumary_line
+async def async_generator() -> Generator[float, None, None]:  # type: ignore
+    """summary_line
 
     Keyword arguments:
     argument -- description
