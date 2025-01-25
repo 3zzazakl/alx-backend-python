@@ -6,12 +6,19 @@ argument -- description
 Return: return_description
 """
 import unittest
+from unittest.mock import patch
 from parameterized import parameterized
 from utils import access_nested_map, get_json, memoize
-from unittest.mock import patch
 
 
 class TestAccessNestedMap(unittest.TestCase):
+    """summary_line
+
+    Keyword arguments:
+    argument -- description
+    Return: return_description
+    """
+
     @parameterized.expand([
         ({'a': 1}, ("a", ), 1),
         ({'a': {'b': 2}}, ("a", ), {"b": 2}),
@@ -19,6 +26,13 @@ class TestAccessNestedMap(unittest.TestCase):
 
     ])
     def test_access_nested_map(self, nested_map, path, expected):
+        """summary_line
+
+        Keyword arguments:
+        argument -- description
+        Return: return_description
+        """
+
         self.assertEqual(access_nested_map(nested_map, path), expected)
 
     @parameterized.expand([
@@ -26,12 +40,26 @@ class TestAccessNestedMap(unittest.TestCase):
         ({'a': 1}, ("a", "b")),
     ])
     def test_access_nested_map_exception(self, nested_map, path):
+        """summary_line
+
+        Keyword arguments:
+        argument -- description
+        Return: return_description
+        """
+
         with self.assertRaises(KeyError) as cm:
             access_nested_map(nested_map, path)
         self.assertEqual(str(cm.exception), repr(path[-1]))
 
 
 class TestGetJson(unittest.TestCase):
+    """summary_line
+
+    Keyword arguments:
+    argument -- description
+    Return: return_description
+    """
+
     # Test the get_json function with mocked HTTP requests
     @parameterized.expand([
         ("http://example.com", {"payload": True}),
@@ -39,6 +67,13 @@ class TestGetJson(unittest.TestCase):
     ])
     @patch("utils.requests.get")
     def test_get_json(self, test_url, test_payload, mock_get):
+        """summary_line
+
+        Keyword arguments:
+        argument -- description
+        Return: return_description
+        """
+
         # Mock the response object and its json method
         mock_response = mock_get.return_value
         mock_response.json.return_value = test_payload
@@ -54,14 +89,49 @@ class TestGetJson(unittest.TestCase):
 
 
 class TestMemoize(unittest.TestCase):
+    """summary_line
+
+    Keyword arguments:
+    argument -- description
+    Return: return_description
+    """
+
     # Test the memoize decorator
     def test_memoize(self):
+        """summary_line
+
+        Keyword arguments:
+        argument -- description
+        Return: return_description
+        """
+
         class TestClass:
+            """summary_line
+
+            Keyword arguments:
+            argument -- description
+            Return: return_description
+            """
+
             def a_method(self):
+                """summary_line
+
+                Keyword arguments:
+                argument -- description
+                Return: return_description
+                """
+
                 return 42
 
             @memoize
             def a_property(self):
+                """summary_line
+
+                Keyword arguments:
+                argument -- description
+                Return: return_description
+                """
+
                 return self.a_method()
 
         # Create an instance of TestClass
