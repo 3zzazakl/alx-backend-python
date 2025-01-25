@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+"""summary_line
+
+Keyword arguments:
+argument -- description
+Return: return_description
+"""
+
+
 import unittest
 from unittest.mock import patch
 from parameterized import parameterized
